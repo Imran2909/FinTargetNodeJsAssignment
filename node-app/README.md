@@ -46,29 +46,37 @@ This project is a Node.js application that demonstrates rate limiting and task q
    cd <your-repo-directory>
 
 2. **Install Dependencies**
+    ```bash
     npm install
 
 3. **Setup environment variables**
 Create a .env file in the root directory with the following content:
-REDIS_HOST=localhost
-REDIS_PORT=6379
-    
+   ```bash
+   REDIS_HOST=localhost    
+   REDIS_PORT=6379
 
-### How to run the application
-1. **Start Redis Server**
-Make sure the Redis server is running. You can start it using:
-redis-server
+## How to run the application
+1. **Start Redis Server** 
+  - Make sure the Redis server is running. You can start it using:
+     ```bash
+      redis-server
 
-2. **Start the Application**
-To start the server with clustering:
-node cluster.js
-
+2. **Start the Application** 
+   - To start the server with clustering:
+   ```bash
+    node cluster.js
 
 ## Testing the Application
-### Make API Requests
+1. **Make API Requests**
 
-You can test the API by sending POST requests to http://localhost:8080/api/v1/task with the following JSON body:
-{
-  "user_id": "123"
-}
-Task completion logs are stored in taskLogs.txt.
+- You can test the API by sending POST requests to 
+   ```bash
+   http://localhost:8080/api/v1/task
+
+ - with the following JSON body:
+   ```bash
+      {
+     "user_id": "123"
+      }
+   
+ - Task completion logs are stored in taskLogs.txt.
