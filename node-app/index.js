@@ -6,10 +6,10 @@ const { addTaskToQueue } = require('./taskQueue');
 const app = express();
 app.use(express.json()); // use json parser to handle request body in json format
 
-// apply the rate limiter for minute limit
-app.use(rateLimiterForMinute);
 // apply the rate limiter for second limit
 app.use(rateLimiterForSecond);
+// apply the rate limiter for minute limit
+app.use(rateLimiterForMinute);
   
 // create a post route for tasks
 app.post('/api/v1/task', async (req, res) => {
